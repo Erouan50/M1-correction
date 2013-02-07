@@ -28,6 +28,25 @@
 <body>
 <c:choose>
     <c:when test="${not empty trips}">
+        <form action="${pageContext.servletContext.contextPath}/trips" method="GET">
+            <label for="departure">Departure: </label>
+            <select id="departure" name="departure">
+                <option value="">All</option>
+                <c:forEach items="${trainStations}" var="trainStation">
+                    <option value="${trainStation.id}">${trainStation.name} (${trainStation.city})</option>
+                </c:forEach>
+            </select>
+            <label for="arrival">Arrival: </label>
+            <select id="arrival" name="arrival">
+                <option value="">All</option>
+                <c:forEach items="${trainStations}" var="trainStation">
+                    <option value="${trainStation.id}">${trainStation.name} (${trainStation.city})</option>
+                </c:forEach>
+            </select>
+            <label for="price">Higher price: </label>
+            <input type="text" id="price" name="price" value="0"/>
+            <input type="submit" value="Filter"/>
+        </form>
         <table>
             <tr>
                 <th>Departure</th>
