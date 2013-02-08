@@ -8,12 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * @author Antoine Rouaze <antoine.rouaze@zenika.com>
  */
 @Entity
 @Table(name = "customer_orders")
+@XmlRootElement
 public class CustomerOrder {
 
     @Id
