@@ -2,13 +2,10 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
     <persistence-unit name="RMT-PU">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>jdbc/rmt</jta-data-source>
         <properties>
-            <property name="hibernate.archive.autodetection" value="class"/>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
         </properties>
     </persistence-unit>
 </persistence>

@@ -30,8 +30,8 @@ public abstract class User {
     private Long id;
     private String username;
     private String password;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String email;
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
@@ -60,20 +60,20 @@ public abstract class User {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastName) {
+        this.lastname = lastName;
     }
 
     public String getEmail() {
@@ -101,9 +101,9 @@ public abstract class User {
 
         if (dateOfBirth != null ? !dateOfBirth.equals(user.dateOfBirth) : user.dateOfBirth != null) return false;
         if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
+        if (firstname != null ? !firstname.equals(user.firstname) : user.firstname != null) return false;
         if (id != null ? !id.equals(user.id) : user.id != null) return false;
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
+        if (lastname != null ? !lastname.equals(user.lastname) : user.lastname != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
         if (username != null ? !username.equals(user.username) : user.username != null) return false;
 
@@ -115,8 +115,8 @@ public abstract class User {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
         return result;
