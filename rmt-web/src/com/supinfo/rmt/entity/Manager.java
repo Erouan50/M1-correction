@@ -31,8 +31,6 @@ public class Manager extends User {
 
         Manager manager = (Manager) o;
 
-        if (employees != null ? !employees.equals(manager.employees) : manager.employees != null) return false;
-
         return true;
     }
 

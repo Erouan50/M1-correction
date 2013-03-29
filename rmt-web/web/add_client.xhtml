@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Antoine Rouaze <antoine.rouaze@zenika.com>
+  Date: 3/29/13
+  Time: 11:25 AM
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Add client</title>
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
+</h:head>
+
+<h:body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+
+            </div>
+            <div class="span10">
+                <h:form styleClass="form-horizontal">
+                    <fieldset>
+                        <legend>Add client</legend>
+                        <div class="control-group">
+                            <h:outputLabel for="name" value="Name: " styleClass="control-label"/>
+
+                            <div class="controls">
+                                <h:inputText id="name" value="#{clientBean.client.name}"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <h:commandButton action="#{clientBean.addClient}" value="Add employee"
+                                                 styleClass="btn"/>
+                            </div>
+                        </div>
+                    </fieldset>
+                </h:form>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+</h:body>
+
+</html>

@@ -10,7 +10,7 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
 <h:head>
     <title>Employee</title>
@@ -18,6 +18,14 @@
 
 <h:body>
     <h1>Welcome Employee #{userBean.user.firstname} #{userBean.user.lastname}</h1>
+    <h:dataTable value="#{clientBean.clients}" var="client">
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Name"/>
+            </f:facet>
+            <h:outputText value="#{client.name}"/>
+        </h:column>
+    </h:dataTable>
 </h:body>
 
 </html>
