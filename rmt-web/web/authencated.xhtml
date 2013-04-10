@@ -15,18 +15,19 @@
     <f:loadBundle var="msg" basename="com.supinfo.rmt.resources.lang"/>
     <title><ui:insert name="title"/></title>
     <link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
+    <link href="css/ui-lightness/jquery-ui-1.10.2.custom.css" rel="stylesheet"/>
 </h:head>
 
 <h:body>
-    <header>
-        <h1>Header</h1>
-    </header>
     <ui:insert name="content"/>
     <footer>
-        <h1>Footer</h1>
+        <p style="text-align: center">© SUPINFO International University - <a
+                href="http://www.supinfo.com">http://www.supinfo.com</a></p>
     </footer>
     <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.10.2.custom.js" type="text/javascript"></script>
+    <ui:insert name="script"/>
 </h:body>
 
 </html>

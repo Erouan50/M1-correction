@@ -4,6 +4,15 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 template="employee_template.xhtml">
+    <ui:define name="script">
+        <script>
+            $(function () {
+                $('#add-worktime-form\\:beginDate').datepicker();
+                $('#add-worktime-form\\:endDate').datepicker();
+            })
+        </script>
+    </ui:define>
+
     <ui:define name="title">
         <h:outputText value="Add worktime"/>
     </ui:define>
@@ -15,7 +24,7 @@
 
                 </div>
                 <div class="span10">
-                    <h:form styleClass="form-horizontal">
+                    <h:form id="add-worktime-form" styleClass="form-horizontal" style="margin: 30px">
                         <fieldset>
                             <legend>Add Work Time</legend>
                             <div class="control-group">

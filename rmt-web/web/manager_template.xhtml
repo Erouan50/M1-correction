@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
                 template="authencated.xhtml">
 
     <ui:define name="content">
-        <h1>Menu manager</h1>
-        <ui:insert name="body"/>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <h:form>
+                        <h:outputText styleClass="brand" value="RMT"/>
+                        <h:commandLink value="#{msg['manager.menu.logout.link']}" action="#{loginBean.logout}"
+                                       styleClass="brand" style="float: right"/>
+
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                                <li>
+                                    <h:outputLink
+                                            value="manager_home.xhtml">#{msg['manager.menu.manager_home.link']}</h:outputLink>
+                                </li>
+                                <li>
+                                    <h:outputLink
+                                            value="add_employee.xhtml">#{msg['manager.menu.add_employee.link']}</h:outputLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <div style="padding-top: 40px">
+            <ui:insert name="body"/>
+        </div>
     </ui:define>
 </ui:composition>

@@ -4,6 +4,7 @@ import com.supinfo.rmt.entity.Employee;
 import com.supinfo.rmt.entity.Manager;
 import com.supinfo.rmt.entity.User;
 import com.supinfo.rmt.service.UserService;
+import com.supinfo.rmt.validation.CheckPassword;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.ejb.EJB;
@@ -26,6 +27,7 @@ public class LoginBean {
     @NotNull
     @NotEmpty(message = "Username must be filled")
     private String username;
+    @CheckPassword
     private String password;
 
     public String authenticate() {
@@ -38,6 +40,11 @@ public class LoginBean {
         } else {
             return null;
         }
+    }
+
+    public String logout() {
+        userBean.setUser(null);
+        return "login?faces-redirect=true";
     }
 
     public String getUsername() {

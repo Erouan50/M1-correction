@@ -8,8 +8,8 @@
         <h:outputText value="Manager"/>
     </ui:define>
     <ui:define name="body">
-        <h1>Welcome Manager #{userBean.user.firstname} #{userBean.user.lastname}</h1>
-        <h:dataTable value="#{employeeBean.employees}" var="employee">
+        <h1 style="margin: 30px">Welcome Manager #{userBean.user.firstname} #{userBean.user.lastname}</h1>
+        <h:dataTable value="#{employeeBean.employees}" var="employee" style="margin: 50px" styleClass="table">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Username"/>

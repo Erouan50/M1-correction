@@ -1,6 +1,7 @@
 package com.supinfo.rmt.entity;
 
 import com.sun.javafx.beans.annotations.NonNull;
+import com.supinfo.rmt.validation.CheckPassword;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -37,8 +38,7 @@ public abstract class User {
     @NotEmpty
     @Size(min = 3, max = 10)
     private String username;
-    @NonNull
-    @NotEmpty
+    @CheckPassword
     private String password;
     @NonNull
     @NotEmpty
