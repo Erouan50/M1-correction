@@ -16,7 +16,14 @@
 </h:head>
 
 <h:body>
-    <div class="container-fluid">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <h:outputText styleClass="brand" value="RMT"/>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding-top: 40px">
         <div class="row-fluid">
             <div class="span2">
 
@@ -30,6 +37,7 @@
 
                             <div class="controls">
                                 <h:inputText id="username" value="#{loginBean.username}"/>
+                                <h:message for="username" styleClass="help-inline"/>
                             </div>
                         </div>
                         <div class="control-group">

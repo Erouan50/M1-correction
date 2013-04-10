@@ -1,73 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Created by IntelliJ IDEA.
-  User: Antoine Rouaze <antoine.rouaze@zenika.com>
-  Date: 3/29/13
-  Time: 11:52 AM
--->
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="employee_template.xhtml">
+    <ui:define name="title">
+        <h:outputText value="Add worktime"/>
+    </ui:define>
 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <ui:define name="body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
 
-<h:head>
-    <title>Add Work Time</title>
-    <link href="css/bootstrap.css" rel="stylesheet" media="screen"/>
-</h:head>
+                </div>
+                <div class="span10">
+                    <h:form styleClass="form-horizontal">
+                        <fieldset>
+                            <legend>Add Work Time</legend>
+                            <div class="control-group">
+                                <h:outputLabel for="beginDate" value="Begin date: " styleClass="control-label"/>
 
-<h:body>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span2">
-
-            </div>
-            <div class="span10">
-                <h:form styleClass="form-horizontal">
-                    <fieldset>
-                        <legend>Add Work Time</legend>
-                        <div class="control-group">
-                            <h:outputLabel for="beginDate" value="Begin date: " styleClass="control-label"/>
-
-                            <div class="controls">
-                                <h:inputText id="beginDate" value="#{workTimeBean.workTime.beginDate}">
-                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
-                                </h:inputText>
+                                <div class="controls">
+                                    <h:inputText id="beginDate" value="#{workTimeBean.workTime.beginDate}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    </h:inputText>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <h:outputLabel for="endDate" value="End date: " styleClass="control-label"/>
+                            <div class="control-group">
+                                <h:outputLabel for="endDate" value="End date: " styleClass="control-label"/>
 
-                            <div class="controls">
-                                <h:inputText id="endDate" value="#{workTimeBean.workTime.endDate}">
-                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
-                                </h:inputText>
+                                <div class="controls">
+                                    <h:inputText id="endDate" value="#{workTimeBean.workTime.endDate}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    </h:inputText>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <h:outputLabel for="client" value="Begin date: " styleClass="control-label"/>
+                            <div class="control-group">
+                                <h:outputLabel for="client" value="Begin date: " styleClass="control-label"/>
 
-                            <div class="controls">
-                                <h:selectOneMenu id="client" value="#{workTimeBean.workTime.client}"
-                                                 converter="#{clientConverter}">
-                                    <f:selectItems value="#{workTimeBean.clientSelectItems}"/>
-                                </h:selectOneMenu>
+                                <div class="controls">
+                                    <h:selectOneMenu id="client" value="#{workTimeBean.workTime.client}"
+                                                     converter="#{clientConverter}">
+                                        <f:selectItems value="#{workTimeBean.clientSelectItems}"/>
+                                    </h:selectOneMenu>
+                                </div>
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <div class="controls">
-                                <h:commandButton action="#{workTimeBean.addWorkTime}" value="Add employee"
-                                                 styleClass="btn"/>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <h:commandButton action="#{workTimeBean.addWorkTime}" value="Add employee"
+                                                     styleClass="btn"/>
+                                </div>
                             </div>
-                        </div>
-                    </fieldset>
-                </h:form>
+                        </fieldset>
+                    </h:form>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="http://code.jquery.com/jquery.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-</h:body>
+    </ui:define>
 
-</html>
+</ui:composition>

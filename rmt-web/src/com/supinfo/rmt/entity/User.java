@@ -1,5 +1,9 @@
 package com.supinfo.rmt.entity;
 
+import com.sun.javafx.beans.annotations.NonNull;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +14,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -28,12 +33,23 @@ public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NonNull
+    @NotEmpty
+    @Size(min = 3, max = 10)
     private String username;
+    @NonNull
+    @NotEmpty
     private String password;
+    @NonNull
+    @NotEmpty
     private String firstname;
+    @NonNull
+    @NotEmpty
     private String lastname;
+    @Email
     private String email;
     @Temporal(TemporalType.DATE)
+    @NonNull
     private Date dateOfBirth;
 
     public Long getId() {

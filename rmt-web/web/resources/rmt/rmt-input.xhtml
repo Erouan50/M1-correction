@@ -1,0 +1,18 @@
+<ui:component xmlns=""
+              xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:composite="http://java.sun.com/jsf/composite" xmlns:h="http://java.sun.com/jsf/html">
+
+    <composite:interface>
+    </composite:interface>
+
+    <composite:implementation>
+        <div class="control-group">
+            <h:outputLabel for="name" value="Name: " styleClass="control-label"/>
+
+            <div class="controls">
+                <h:inputText id="name" value="#{clientBean.client.name}"/>
+            </div>
+        </div>
+    </composite:implementation>
+
+</ui:component>

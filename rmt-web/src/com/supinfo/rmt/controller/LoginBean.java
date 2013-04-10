@@ -4,10 +4,12 @@ import com.supinfo.rmt.entity.Employee;
 import com.supinfo.rmt.entity.Manager;
 import com.supinfo.rmt.entity.User;
 import com.supinfo.rmt.service.UserService;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author Antoine Rouaze <antoine.rouaze@zenika.com>
@@ -21,6 +23,8 @@ public class LoginBean {
     @EJB
     private UserService userService;
 
+    @NotNull
+    @NotEmpty(message = "Username must be filled")
     private String username;
     private String password;
 

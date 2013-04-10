@@ -65,4 +65,8 @@ public class Employee extends User {
         return result;
     }
 
+    public static void main(String[] args) {
+        char tot = 'a';
+        System.out.println((int) tot);
+    }
 }
